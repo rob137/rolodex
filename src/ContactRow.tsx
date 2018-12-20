@@ -16,6 +16,7 @@ export default function ContactRow(props: ContactRowProps) {
   }
 
   const lastContact = props.contact.lastContact && new Date(props.contact.lastContact).toDateString();
+  const keys = ['name', 'phone', 'company', 'position', 'lastContact', 'notes'];
   return (
     <tr>
       <td
