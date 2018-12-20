@@ -14,7 +14,6 @@ export default function ContactRow(props: ContactRowProps) {
       <td>{props.contact.phone}</td>
       <td>{props.contact.company}</td>
       <td>{props.contact.position}</td>
-      <td>{props.contact.status}</td>
       <td>{lastContact}</td>
       <td>{props.contact.notes}</td>
     </tr>

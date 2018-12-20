@@ -16,7 +16,6 @@ export default function ContactList(props: ContactListProps) {
           <th>Phone</th>
           <th>Company</th>
           <th>Position</th>
-          <th>Status</th>
           <th>Last Contacted</th>
           <th>Notes</th>
         </tr>
