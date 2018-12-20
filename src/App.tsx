@@ -6,17 +6,16 @@ import ContactList from './ContactList';
 import contactData from './contact-data.json';
 
 interface AppState {
-  ContactData?: any;
+  contactData?: any;
 }
 
 class App extends Component<{}, AppState> {
   constructor(props: any) {
     super(props);
-    this.state = { ContactData: contactData };
+    this.state = { contactData: contactData };
   }
 
   render() {
-    console.log(this.state.ContactData);
     return (
       <div className="App">
         <header className="App-header">
