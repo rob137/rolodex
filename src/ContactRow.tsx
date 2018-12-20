@@ -20,7 +20,7 @@ export default function ContactRow(props: ContactRowProps) {
         return (
           <InteractiveCell
             contactKey={propName}
-            data={props.contact[propName]}
+            data={propName === 'lastContact' ? lastContact : props.contact[propName]}
             contactIndex={props.contactIndex}
             updateContact={props.updateContact}
             key={key}
