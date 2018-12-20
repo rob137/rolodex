@@ -10,7 +10,7 @@ export default function ContactAdder() {
       <input type="text" placeholder="Phone"/>
       <input type="text" placeholder="Company"/>
       <input type="text" placeholder="Position"/>
-      <input type="text" placeholder="Last"/>
+      <input type="text" placeholder="Last contact"/>
       <input type="text" placeholder="Notes"/>
       <input type="submit"/>
     </form>
