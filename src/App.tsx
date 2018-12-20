@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import logo from './logo.svg';
 
-class App extends Component {
-  constructor() {
-    super();
+interface AppState {
+  a?: any;
+}
+
+class App extends Component<{}, AppState> {
+  constructor(props: any) {
+    super(props);
     this.state = { a: undefined };
   }
   
