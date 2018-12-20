@@ -19,7 +19,11 @@ export default function ContactRow(props: InteractiveCellProps) {
     <td
       contentEditable={true}
       suppressContentEditableWarning={true}
-      onKeyDown={(e) => { if (e.which === 13 && e.shiftKey === false) { (e.target as HTMLElement).blur() }}}
+      onKeyDown={(e) => {
+        if (e.which === 13 && e.shiftKey === false) {
+          (e.target as HTMLElement).blur()
+        }
+      }}
       onBlur={(e) => updateContact(e)}
     >
       {props.data}
