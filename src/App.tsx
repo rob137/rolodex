@@ -21,7 +21,9 @@ class App extends Component<{}, AppState> {
   }
 
   setNewContact(input: NewContact) {
-    console.log(input);
+    const contactData = [...this.state.contactData];
+    contactData.push(input);
+    this.setState({ contactData })
   }
 
   render() {

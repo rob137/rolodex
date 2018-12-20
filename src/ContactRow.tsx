@@ -7,7 +7,7 @@ interface ContactRowProps {
 }
 
 export default function ContactRow(props: ContactRowProps) {
-  const lastContact = new Date(props.contact.lastContact).toDateString();
+  const lastContact = props.contact.lastContact && new Date(props.contact.lastContact).toDateString();
   return (
     <tr>
       <td>{props.contact.name}</td>
