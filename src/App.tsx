@@ -11,6 +11,13 @@ interface AppState {
   newContact: NewContact;
 }
 
+export const validateDate = (input?: string) => {
+  if (!input || isNaN(Date.parse(input))) {
+    return '';
+  }
+  return new Date(input).toDateString();
+}
+
 class App extends Component<{}, AppState> {
   constructor(props: any) {
     super(props);
@@ -20,22 +27,16 @@ class App extends Component<{}, AppState> {
     };
   }
 
-  validateDate(input?: string) {
-    if (!input || isNaN(Date.parse(input))) {
-      return '';
-    }
-    return new Date(input).toDateString();
-  }
-
   setNewContact(input: NewContact) {
     const contactData = [...this.state.contactData];
-    input.lastContact = this.validateDate(input.lastContact);
+    input.lastContact = validateDate(input.lastContact);
     contactData.push(input);
     this.setState({ contactData })
   }
 
   updateContact(index: number, key: ContactKey, value: string) {
     const contactData = [...this.state.contactData];
+    contactData[index][key] = key === 'lastContact' ? validateDate(value) : value;
     this.setState({ contactData });
   }
 

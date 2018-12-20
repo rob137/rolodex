@@ -28,7 +28,13 @@ export default function ContactRow(props: InteractiveCellProps) {
           (e.target as HTMLElement).blur()
         }
       }}
-      onBlur={(e) => updateContact(e)}
+      onBlur={(e) => {
+        if (props.fieldName === 'lastContact' && isNaN(Date.parse(e.target.innerText))) {
+          e.target.innerText = data || '';
+          return e.preventDefault();
+        }
+        return updateContact(e);
+      }}
     >
       {data}
     </td>
