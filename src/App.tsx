@@ -18,7 +18,7 @@ export const validateDate = (input?: string) => {
   return new Date(input).toDateString();
 }
 
-class App extends Component<{}, AppState> {
+export default class App extends Component<{}, AppState> {
   constructor(props: any) {
     super(props);
     this.state = { 
@@ -61,5 +61,3 @@ class App extends Component<{}, AppState> {
     )
   }
 }
-
-export default App;
