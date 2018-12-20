@@ -3,6 +3,7 @@ import './App.css';
 import logo from './logo.svg';
 
 import ContactList from './ContactList';
+import contactData from './contact-data.json';
 
 interface AppState {
   ContactData?: any;
@@ -11,10 +12,11 @@ interface AppState {
 class App extends Component<{}, AppState> {
   constructor(props: any) {
     super(props);
-    this.state = { ContactData: undefined };
+    this.state = { ContactData: contactData };
   }
 
   render() {
+    console.log(this.state.ContactData);
     return (
       <div className="App">
         <header className="App-header">
