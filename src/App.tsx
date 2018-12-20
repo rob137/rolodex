@@ -5,30 +5,20 @@ import logo from './logo.svg';
 import ContactList from './ContactList';
 
 interface AppState {
-  a?: any;
+  ContactData?: any;
 }
 
 class App extends Component<{}, AppState> {
   constructor(props: any) {
     super(props);
-    this.state = { a: undefined };
-  }
-  
-  componentWillMount() {
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
-    .then(response => response.json())
-    .then(data => this.setState({a: data}));
+    this.state = { ContactData: undefined };
   }
 
   render() {
-    const a = this.state.a && JSON.stringify(this.state.a);
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            {a}
-          </p>
           <ContactList/>
           <a
             className="App-link"
