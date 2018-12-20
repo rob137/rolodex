@@ -15,7 +15,12 @@ export default function ContactList(props: ContactListProps) {
     <table>
       <tbody>
         <tr>
-          {props.fieldNames.map((fieldName, key) => <th key={key}>{fieldName}</th>)}
+          {props.fieldNames.map((fieldName, key) => {
+            const header = (
+              fieldName === 'lastContact' ? 'Last Contacted' : fieldName.charAt(0).toUpperCase() + fieldName.slice(1)
+            );
+            return <th key={key}>{header}</th>
+          })}
         </tr>
         {
           props.contactData.map((contact: Contact, key) => {
