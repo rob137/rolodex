@@ -12,6 +12,7 @@ interface ContactAdderState {
 }
 
 interface ContactAdderProps {
+  fieldNames: ContactKey[];
   setNewContact: (input: NewContact) => void;
 }
 

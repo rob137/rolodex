@@ -42,7 +42,7 @@ class App extends Component<{}, AppState> {
     const fieldNames: ContactKey[] = ['name', 'phone', 'company', 'position', 'lastContact', 'notes'];
     return (
       <div className="App">
-        <ContactAdder setNewContact={this.setNewContact.bind(this)}/>
+        <ContactAdder fieldNames={fieldNames} setNewContact={this.setNewContact.bind(this)}/>
         <ContactList
           fieldNames={fieldNames}
           contactData={this.state.contactData}
