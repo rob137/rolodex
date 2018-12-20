@@ -18,3 +18,5 @@ export type NewContact = {
   lastContact?: string;
   notes?: string;
 }
+
+export type ContactKey = 'name' | 'phone' | 'company' | 'position' | 'lastContact' | 'notes';
