@@ -15,12 +15,7 @@ export default function ContactList(props: ContactListProps) {
     <table>
       <tbody>
         <tr>
-          <th>Name</th>
-          <th>Phone</th>
-          <th>Company</th>
-          <th>Position</th>
-          <th>Last Contacted</th>
-          <th>Notes</th>
+          {fieldNames.map((fieldName, key) => <th key={key}>{fieldName}</th>)}
         </tr>
         {
           props.contactData.map((contact: Contact, key) => {
@@ -28,6 +23,7 @@ export default function ContactList(props: ContactListProps) {
               <ContactRow
                 contact={contact}
                 contactIndex={key}
+                fieldNames={fieldNames}
                 key={key}
                 updateContact={props.updateContact}
                 removeContact={props.removeContact}

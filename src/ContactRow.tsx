@@ -6,6 +6,7 @@ import { Contact, ContactKey } from './types';
 interface ContactRowProps {
   contact: Contact;
   contactIndex: number;
+  fieldNames: ContactKey[];
   updateContact: (index: number, key: ContactKey, value: string) => void;
   removeContact: (index: number) => void;
 }
@@ -15,11 +16,11 @@ export default function ContactRow(props: ContactRowProps) {
 
   return (
     <tr>
-      {propNames.map((propName: ContactKey, key: number) => {
+      {fieldNames.map((fieldName: ContactKey, key: number) => {
         return (
           <InteractiveCell
-            contactKey={propName}
-            data={propName === 'lastContact' ? lastContact : props.contact[propName]}
+            fieldName={fieldName}
+            data={fieldName === 'lastContact' ? lastContact : props.contact[fieldName]}
             contactIndex={props.contactIndex}
             updateContact={props.updateContact}
             key={key}

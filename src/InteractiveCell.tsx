@@ -3,7 +3,7 @@ import React from 'react';
 import { ContactKey } from './types';
 
 interface InteractiveCellProps {
-  contactKey: ContactKey;
+  fieldName: ContactKey;
   data?: string;
   contactIndex: number;
   updateContact: (index: number, key: ContactKey, value: string) => void;
@@ -12,7 +12,7 @@ interface InteractiveCellProps {
 export default function ContactRow(props: InteractiveCellProps) {
   const updateContact = (event: any) => {
     event as Event;
-    event.target && props.updateContact(props.contactIndex, props.contactKey, props.data || '');
+    event.target && props.updateContact(props.contactIndex, props.fieldName, props.data || '');
   }
 
   return (
