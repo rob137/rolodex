@@ -17,6 +17,7 @@ class App extends Component<{}, AppState> {
     .then(response => response.json())
     .then(data => this.setState({a: data}));
   }
+
   render() {
     const a = this.state.a && JSON.stringify(this.state.a);
     return (
