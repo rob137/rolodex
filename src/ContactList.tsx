@@ -12,7 +12,6 @@ export default function ContactList(props: ContactListProps) {
     <table>
       <tbody>
         <tr>
-          <th/>
           <th>Name</th>
           <th>Phone</th>
           <th>Company</th>

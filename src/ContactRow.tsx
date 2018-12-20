@@ -8,8 +8,14 @@ interface ContactRowProps {
 
 export default function ContactRow(props: ContactRowProps) {
   return (
-  <tr>
-    <td>Test again</td>
-  </tr>
+    <tr>
+      <td>{props.contact.name}</td>
+      <td>{props.contact.phone}</td>
+      <td>{props.contact.company}</td>
+      <td>{props.contact.position}</td>
+      <td>{props.contact.status}</td>
+      <td>{props.contact.lastContact}</td>
+      <td>{props.contact.notes}</td>
+    </tr>
   )
 }
