@@ -12,8 +12,8 @@ export default function ContactList(props: ContactListProps) {
     <table>
       <tbody>
         {
-          props.contactData.map((contact: Contact) => {
-            return <ContactRow contact={contact}/>
+          props.contactData.map((contact: Contact, key) => {
+            return <ContactRow contact={contact} key={key}/>
           })
         }
       </tbody>
