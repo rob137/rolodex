@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 
 import ContactRow from './ContactRow';
 
-export default function ContactsList() {
-    return (
-        <table>
-            <tbody>
-                <ContactRow/>
-            </tbody>
-        </table>
-    )
+export default function ContactList() {
+  return (
+    <table>
+      <tbody>
+        <ContactRow/>
+      </tbody>
+    </table>
+  )
 }
