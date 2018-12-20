@@ -21,7 +21,7 @@ class App extends Component<{}, AppState> {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <ContactList/>
+          <ContactList contactData={this.state.contactData}/>
           <a
             className="App-link"
             href="https://reactjs.org"
