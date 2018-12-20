@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import ContactAdderInput from './ContactAdderInput';
 import { NewContact, ContactKey } from './types';
 
 interface ContactAdderState {
@@ -40,7 +41,17 @@ export default class ContactAdder extends Component<ContactAdderProps, ContactAd
         this.props.setNewContact(this.state);
         return false;
       }}>
-        <input
+        {this.props.fieldNames.map((fieldName: ContactKey, key: number) => {
+          return (
+            <ContactAdderInput
+              fieldName={fieldName}
+              value={this.state[fieldName]}
+              handleChange={this.handleChange.bind(this)}
+              key={key}
+            />
+          );
+        })}
+        {/* <input
           type="text"
           onChange={(e) => this.handleChange(e.target.name as ContactKey, e.target.value)}
           value={this.state.name}
@@ -81,7 +92,7 @@ export default class ContactAdder extends Component<ContactAdderProps, ContactAd
           value={this.state.notes}
           name="notes"
           placeholder="Notes"
-        />
+        /> */}
         <input type="submit"/>
       </form>
     );
