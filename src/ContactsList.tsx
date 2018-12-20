@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
 
+import ContactRow from './ContactRow';
+
 export default function ContactsList() {
-    return <p>test</p>
+    return (
+        <table>
+            <tbody>
+                <ContactRow/>
+            </tbody>
+        </table>
+    )
 }
