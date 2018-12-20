@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import logo from './logo.svg';
 
-import ContactsList from './ContactsList';
+import ContactList from './ContactList';
 
 interface AppState {
   a?: any;
@@ -29,7 +29,7 @@ class App extends Component<{}, AppState> {
           <p>
             {a}
           </p>
-          <ContactsList/>
+          <ContactList/>
           <a
             className="App-link"
             href="https://reactjs.org"
