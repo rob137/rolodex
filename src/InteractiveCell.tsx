@@ -15,9 +15,9 @@ export default function ContactRow(props: InteractiveCellProps) {
     event.target && props.updateContact(props.contactIndex, props.fieldName, props.data || '');
   }
 
-  const data = props.fieldName === 'lastContact' ?
-    props.data && new Date(props.data).toDateString() :
-    props.data;
+  const data = props.fieldName === 'lastContact'
+      ? props.data && new Date(props.data).toDateString()
+      : props.data;
 
   return (
     <td

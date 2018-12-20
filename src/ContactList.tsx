@@ -17,7 +17,9 @@ export default function ContactList(props: ContactListProps) {
         <tr>
           {props.fieldNames.map((fieldName, key) => {
             const header = (
-              fieldName === 'lastContact' ? 'Last Contacted' : fieldName.charAt(0).toUpperCase() + fieldName.slice(1)
+              fieldName === 'lastContact'
+                  ? 'Last Contacted'
+                  : fieldName.charAt(0).toUpperCase() + fieldName.slice(1)
             );
             return <th key={key}>{header}</th>
           })}

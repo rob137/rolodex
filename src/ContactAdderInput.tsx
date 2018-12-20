@@ -10,7 +10,9 @@ interface ContactAdderInputProps {
 
 export default function ContactRow(props: ContactAdderInputProps) {
   const placeholder = (
-    props.fieldName === 'lastContact' ? 'Last contacted' : props.fieldName.charAt(0).toUpperCase() + props.fieldName.slice(1)
+    props.fieldName === 'lastContact'
+        ? 'Last contacted'
+        : props.fieldName.charAt(0).toUpperCase() + props.fieldName.slice(1)
   );
   return (
     <input
