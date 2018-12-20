@@ -51,48 +51,6 @@ export default class ContactAdder extends Component<ContactAdderProps, ContactAd
             />
           );
         })}
-        {/* <input
-          type="text"
-          onChange={(e) => this.handleChange(e.target.name as ContactKey, e.target.value)}
-          value={this.state.name}
-          name="name"
-          placeholder="Name"
-        />
-        <input
-          type="text"
-          onChange={(e) => this.handleChange(e.target.name as ContactKey, e.target.value)}
-          value={this.state.phone}
-          name="phone"
-          placeholder="Phone"
-        />
-        <input
-          type="text"
-          onChange={(e) => this.handleChange(e.target.name as ContactKey, e.target.value)}
-          value={this.state.company}
-          name="company"
-          placeholder="Company"
-        />
-        <input
-          type="text"
-          onChange={(e) => this.handleChange(e.target.name as ContactKey, e.target.value)}
-          value={this.state.position}
-          name="position"
-          placeholder="Position"
-        />
-        <input
-          type="text"
-          onChange={(e) => this.handleChange(e.target.name as ContactKey, e.target.value)}
-          value={this.state.lastContact}
-          name="lastContact"
-          placeholder="Last contacted"
-        />
-        <input
-          type="text"
-          onChange={(e) => this.handleChange(e.target.name as ContactKey, e.target.value)}
-          value={this.state.notes}
-          name="notes"
-          placeholder="Notes"
-        /> */}
         <input type="submit"/>
       </form>
     );
