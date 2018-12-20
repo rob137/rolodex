@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { ContactKey } from './types';
+import { NewContact, ContactKey } from './types';
 
 interface ContactAdderState {
   name: string;
@@ -11,8 +11,12 @@ interface ContactAdderState {
   notes: string;
 }
 
-export default class ContactAdder extends Component<{}, ContactAdderState> {
-  constructor(props: {}) {
+interface ContactAdderProps {
+  setNewContact: (input: NewContact) => void;
+}
+
+export default class ContactAdder extends Component<ContactAdderProps, ContactAdderState> {
+  constructor(props: ContactAdderProps) {
     super(props);
     this.state = {
       name: '',
@@ -32,6 +36,7 @@ export default class ContactAdder extends Component<{}, ContactAdderState> {
     return (
       <form onSubmit={(e) => {
         e.preventDefault();
+        this.props.setNewContact(this.state);
         return false;
       }}>
         <input
@@ -81,7 +86,3 @@ export default class ContactAdder extends Component<{}, ContactAdderState> {
     );
   }
 }
-
-/* 
-On submitting, I want the form to clear and all the props to be saved in a new row at the bottom of the table 
-*/

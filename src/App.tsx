@@ -20,10 +20,14 @@ class App extends Component<{}, AppState> {
     };
   }
 
+  setNewContact(input: NewContact) {
+    console.log(input);
+  }
+
   render() {
     return (
       <div className="App">
-        <ContactAdder/>
+        <ContactAdder setNewContact={this.setNewContact.bind(this)}/>
         <ContactList contactData={this.state.contactData}/>
       </div>
     )
