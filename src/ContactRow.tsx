@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import InteractiveCell from './InteractiveCell';
 import { Contact, ContactKey } from './types';
 
 interface ContactRowProps {
@@ -10,16 +11,23 @@ interface ContactRowProps {
 }
 
 export default function ContactRow(props: ContactRowProps) {
-  const updateContact = (event: any) => {
-    event as Event;
-    event.target && props.updateContact(props.contactIndex, event.target.title as ContactKey, event.target.innerText);
-  }
   const lastContact = props.contact.lastContact && new Date(props.contact.lastContact).toDateString();
-  const keys = ['name', 'phone', 'company', 'position', 'lastContact', 'notes'];
+  const propNames: ContactKey[] = ['name', 'phone', 'company', 'position', 'lastContact', 'notes'];
 
   return (
     <tr>
-      <td
+      {propNames.map((propName: ContactKey, key: key) => {
+        return (
+          <InteractiveCell
+            contactKey={propName}
+            data={props.contact[propName]}
+            contactIndex={props.contactIndex}
+            updateContact={props.updateContact}
+            key={key}
+          />
+          );
+      })}
+      {/* <td
         contentEditable={true}
         suppressContentEditableWarning={true}
         title={'name'}
@@ -72,7 +80,7 @@ export default function ContactRow(props: ContactRowProps) {
         onBlur={(e) => updateContact(e)}
       >
         {props.contact.notes}
-      </td>
+      </td> */}
       <td onClick={() => props.removeContact(props.contactIndex)}>x</td>
     </tr>
   )
