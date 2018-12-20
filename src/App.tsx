@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import ContactAdder from './ContactAdder';
 import ContactList from './ContactList';
 import contactData from './contact-data.json';
 import { ContactData } from './types';
@@ -18,9 +19,8 @@ class App extends Component<{}, AppState> {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <ContactList contactData={this.state.contactData}/>
-        </header>
+        <ContactAdder/>
+        <ContactList contactData={this.state.contactData}/>
       </div>
     )
   }
