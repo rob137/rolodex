@@ -4,7 +4,7 @@ import './App.css';
 import ContactAdder from './ContactAdder';
 import ContactList from './ContactList';
 import contactData from './contact-data.json';
-import { ContactData, NewContact } from './types';
+import { ContactData, NewContact, ContactKey } from './types';
 
 interface AppState {
   contactData: ContactData;
@@ -26,6 +26,12 @@ class App extends Component<{}, AppState> {
     this.setState({ contactData })
   }
 
+  updateContact(index: number, key: ContactKey, value: string) {
+    const contactData = [...this.state.contactData];
+    contactData[index][key] = value;
+    this.setState({ contactData });
+  }
+
   removeContact(index: number) {
     const contactData = [...this.state.contactData];
     contactData.splice(index, 1);
@@ -36,7 +42,11 @@ class App extends Component<{}, AppState> {
     return (
       <div className="App">
         <ContactAdder setNewContact={this.setNewContact.bind(this)}/>
-        <ContactList contactData={this.state.contactData} removeContact={this.removeContact.bind(this)}/>
+        <ContactList
+          contactData={this.state.contactData}
+          updateContact={this.updateContact.bind(this)}
+          removeContact={this.removeContact.bind(this)}
+        />
       </div>
     )
   }

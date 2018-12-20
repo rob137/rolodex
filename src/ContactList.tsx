@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 
 import ContactRow from './ContactRow';
-import { ContactData, Contact } from './types';
+import { ContactData, Contact, ContactKey } from './types';
 
 interface ContactListProps {
   contactData: ContactData;
   removeContact: (index: number) => void;
+  updateContact: (index: number, key: ContactKey, value: string) => void;
 }
 
 export default function ContactList(props: ContactListProps) {
@@ -22,7 +23,7 @@ export default function ContactList(props: ContactListProps) {
         </tr>
         {
           props.contactData.map((contact: Contact, key) => {
-            return <ContactRow contact={contact} contactIndex={key} key={key} removeContact={props.removeContact}/>
+            return <ContactRow contact={contact} contactIndex={key} key={key} updateContact={props.updateContact} removeContact={props.removeContact}/>
           })
         }
       </tbody>
