@@ -11,10 +11,10 @@ export type Contact = {
 }
 
 export type NewContact = {
-  name: string;
-  phone: string;
-  company: string;
-  position: string;
-  lastContact: string;
-  notes: string;
+  name?: string;
+  phone?: string;
+  company?: string;
+  position?: string;
+  lastContact?: string;
+  notes?: string;
 }
