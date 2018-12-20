@@ -21,6 +21,7 @@ export default function ContactRow(props: ContactRowProps) {
       <td
         contentEditable={true}
         title={'name'}
+        onKeyDown={(e) => { if (e.which === 13 && e.shiftKey === false) { (e.target as HTMLElement).blur() }}}
         onBlur={(e) => updateContact(e)}
       >
         {props.contact.name}
@@ -28,6 +29,7 @@ export default function ContactRow(props: ContactRowProps) {
       <td
         contentEditable={true}
         title={'phone'}
+        onKeyDown={(e) => { if (e.which === 13 && e.shiftKey === false) { (e.target as HTMLElement).blur() }}}
         onBlur={(e) => updateContact(e)}
       >
         {props.contact.phone}
@@ -35,6 +37,7 @@ export default function ContactRow(props: ContactRowProps) {
       <td
         contentEditable={true}
         title={'company'}
+        onKeyDown={(e) => { if (e.which === 13 && e.shiftKey === false) { (e.target as HTMLElement).blur() }}}
         onBlur={(e) => updateContact(e)}
       >
         {props.contact.company}
@@ -42,6 +45,7 @@ export default function ContactRow(props: ContactRowProps) {
       <td
         contentEditable={true}
         title={'position'}
+        onKeyDown={(e) => { if (e.which === 13 && e.shiftKey === false) { (e.target as HTMLElement).blur() }}}
         onBlur={(e) => updateContact(e)}
       >
         {props.contact.position}
@@ -49,6 +53,7 @@ export default function ContactRow(props: ContactRowProps) {
       <td
         contentEditable={true}
         title={'lastContact'}
+        onKeyDown={(e) => { if (e.which === 13 && e.shiftKey === false) { (e.target as HTMLElement).blur() }}}
         onBlur={(e) => updateContact(e)}
       >
         {lastContact}
@@ -56,6 +61,7 @@ export default function ContactRow(props: ContactRowProps) {
       <td
         contentEditable={true}
         title={'notes'}
+        onKeyDown={(e) => { if (e.which === 13 && e.shiftKey === false) { (e.target as HTMLElement).blur() }}}
         onBlur={(e) => updateContact(e)}
       >
         {props.contact.notes}
