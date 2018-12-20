@@ -7,6 +7,7 @@ interface ContactRowProps {
 }
 
 export default function ContactRow(props: ContactRowProps) {
+  const lastContact = new Date(props.contact.lastContact).toDateString();
   return (
     <tr>
       <td>{props.contact.name}</td>
@@ -14,7 +15,7 @@ export default function ContactRow(props: ContactRowProps) {
       <td>{props.contact.company}</td>
       <td>{props.contact.position}</td>
       <td>{props.contact.status}</td>
-      <td>{props.contact.lastContact}</td>
+      <td>{lastContact}</td>
       <td>{props.contact.notes}</td>
     </tr>
   )
