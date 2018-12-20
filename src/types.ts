@@ -1,6 +1,6 @@
 export type ContactData = Contact[];
 
-type Contact = {
+export type Contact = {
   "name": string;
   "phone": string;
   "company": string;
