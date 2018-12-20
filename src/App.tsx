@@ -26,11 +26,17 @@ class App extends Component<{}, AppState> {
     this.setState({ contactData })
   }
 
+  removeContact(index: number) {
+    const contactData = [...this.state.contactData];
+    contactData.splice(index, 1);
+    this.setState({ contactData });
+  }
+
   render() {
     return (
       <div className="App">
         <ContactAdder setNewContact={this.setNewContact.bind(this)}/>
-        <ContactList contactData={this.state.contactData}/>
+        <ContactList contactData={this.state.contactData} removeContact={this.removeContact.bind(this)}/>
       </div>
     )
   }

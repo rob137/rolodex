@@ -4,6 +4,8 @@ import { Contact } from './types';
 
 interface ContactRowProps {
   contact: Contact;
+  contactIndex: number;
+  removeContact: (index: number) => void;
 }
 
 export default function ContactRow(props: ContactRowProps) {
@@ -16,6 +18,7 @@ export default function ContactRow(props: ContactRowProps) {
       <td>{props.contact.position}</td>
       <td>{lastContact}</td>
       <td>{props.contact.notes}</td>
+      <td onClick={() => props.removeContact(props.contactIndex)}>x</td>
     </tr>
   )
 }
