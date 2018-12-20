@@ -4,9 +4,10 @@ import logo from './logo.svg';
 
 import ContactList from './ContactList';
 import contactData from './contact-data.json';
+import { ContactData } from './types';
 
 interface AppState {
-  contactData?: any;
+  contactData: ContactData;
 }
 
 class App extends Component<{}, AppState> {
