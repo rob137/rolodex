@@ -12,7 +12,6 @@ interface ContactRowProps {
 
 export default function ContactRow(props: ContactRowProps) {
   const lastContact = props.contact.lastContact && new Date(props.contact.lastContact).toDateString();
-  const propNames: ContactKey[] = ['name', 'phone', 'company', 'position', 'lastContact', 'notes'];
 
   return (
     <tr>

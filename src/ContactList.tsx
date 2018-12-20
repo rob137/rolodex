@@ -10,6 +10,7 @@ interface ContactListProps {
 }
 
 export default function ContactList(props: ContactListProps) {
+  const fieldNames: ContactKey[] = ['name', 'phone', 'company', 'position', 'lastContact', 'notes'];
   return (
     <table>
       <tbody>
