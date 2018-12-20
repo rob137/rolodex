@@ -12,15 +12,13 @@ interface ContactRowProps {
 }
 
 export default function ContactRow(props: ContactRowProps) {
-  const lastContact = props.contact.lastContact && new Date(props.contact.lastContact).toDateString();
-
   return (
     <tr>
       {props.fieldNames.map((fieldName: ContactKey, key: number) => {
         return (
           <InteractiveCell
             fieldName={fieldName}
-            data={fieldName === 'lastContact' ? lastContact : props.contact[fieldName]}
+            data={props.contact[fieldName]}
             contactIndex={props.contactIndex}
             updateContact={props.updateContact}
             key={key}
