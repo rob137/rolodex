@@ -20,15 +20,22 @@ class App extends Component<{}, AppState> {
     };
   }
 
+  validateDate(input?: string) {
+    if (!input || isNaN(Date.parse(input))) {
+      return '';
+    }
+    return new Date(input).toDateString();
+  }
+
   setNewContact(input: NewContact) {
     const contactData = [...this.state.contactData];
+    input.lastContact = this.validateDate(input.lastContact);
     contactData.push(input);
     this.setState({ contactData })
   }
 
   updateContact(index: number, key: ContactKey, value: string) {
     const contactData = [...this.state.contactData];
-    contactData[index][key] = value;
     this.setState({ contactData });
   }
 
