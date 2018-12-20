@@ -16,7 +16,7 @@ export default function ContactRow(props: ContactRowProps) {
 
   return (
     <tr>
-      {propNames.map((propName: ContactKey, key: key) => {
+      {propNames.map((propName: ContactKey, key: number) => {
         return (
           <InteractiveCell
             contactKey={propName}
