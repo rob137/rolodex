@@ -23,7 +23,15 @@ export default function ContactList(props: ContactListProps) {
         </tr>
         {
           props.contactData.map((contact: Contact, key) => {
-            return <ContactRow contact={contact} contactIndex={key} key={key} updateContact={props.updateContact} removeContact={props.removeContact}/>
+            return (
+              <ContactRow
+                contact={contact}
+                contactIndex={key}
+                key={key}
+                updateContact={props.updateContact}
+                removeContact={props.removeContact}
+              />
+            );
           })
         }
       </tbody>
