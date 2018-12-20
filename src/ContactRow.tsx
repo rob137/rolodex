@@ -27,60 +27,6 @@ export default function ContactRow(props: ContactRowProps) {
           />
           );
       })}
-      {/* <td
-        contentEditable={true}
-        suppressContentEditableWarning={true}
-        title={'name'}
-        onKeyDown={(e) => { if (e.which === 13 && e.shiftKey === false) { (e.target as HTMLElement).blur() }}}
-        onBlur={(e) => updateContact(e)}
-      >
-        {props.contact.name}
-      </td>
-      <td
-        contentEditable={true}
-        suppressContentEditableWarning={true}
-        title={'phone'}
-        onKeyDown={(e) => { if (e.which === 13 && e.shiftKey === false) { (e.target as HTMLElement).blur() }}}
-        onBlur={(e) => updateContact(e)}
-      >
-        {props.contact.phone}
-      </td>
-      <td
-        contentEditable={true}
-        suppressContentEditableWarning={true}
-        title={'company'}
-        onKeyDown={(e) => { if (e.which === 13 && e.shiftKey === false) { (e.target as HTMLElement).blur() }}}
-        onBlur={(e) => updateContact(e)}
-      >
-        {props.contact.company}
-      </td>
-      <td
-        contentEditable={true}
-        suppressContentEditableWarning={true}
-        title={'position'}
-        onKeyDown={(e) => { if (e.which === 13 && e.shiftKey === false) { (e.target as HTMLElement).blur() }}}
-        onBlur={(e) => updateContact(e)}
-      >
-        {props.contact.position}
-      </td>
-      <td
-        contentEditable={true}
-        suppressContentEditableWarning={true}
-        title={'lastContact'}
-        onKeyDown={(e) => { if (e.which === 13 && e.shiftKey === false) { (e.target as HTMLElement).blur() }}}
-        onBlur={(e) => updateContact(e)}
-      >
-        {lastContact}
-      </td>
-      <td
-        contentEditable={true}
-        suppressContentEditableWarning={true}
-        title={'notes'}
-        onKeyDown={(e) => { if (e.which === 13 && e.shiftKey === false) { (e.target as HTMLElement).blur() }}}
-        onBlur={(e) => updateContact(e)}
-      >
-        {props.contact.notes}
-      </td> */}
       <td onClick={() => props.removeContact(props.contactIndex)}>x</td>
     </tr>
   )
