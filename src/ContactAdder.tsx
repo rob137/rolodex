@@ -52,6 +52,7 @@ export default class ContactAdder extends Component<ContactAdderProps, ContactAd
             />
           );
         })}
+        <br/>
         <input type="submit"/>
       </form>
     );
