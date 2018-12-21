@@ -11,7 +11,7 @@ interface AppState {
   newContact: NewContact;
 }
 
-export const validateDate = (input?: string) => {
+export const formatDate = (input?: string) => {
   if (!input || isNaN(Date.parse(input))) {
     return '';
   }
@@ -29,14 +29,14 @@ export default class App extends Component<{}, AppState> {
 
   setNewContact(input: NewContact) {
     const contactData = [...this.state.contactData];
-    input.lastContact = validateDate(input.lastContact);
+    input.lastContact = formatDate(input.lastContact);
     contactData.push(input);
     this.setState({ contactData })
   }
 
   updateContact(index: number, key: ContactKey, value: string) {
     const contactData = [...this.state.contactData];
-    contactData[index][key] = key === 'lastContact' ? validateDate(value) : value;
+    contactData[index][key] = key === 'lastContact' ? formatDate(value) : value;
     this.setState({ contactData });
   }
 

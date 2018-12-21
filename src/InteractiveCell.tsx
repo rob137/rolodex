@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { validateDate } from './App';
+import { formatDate } from './App';
 import { ContactKey } from './types';
 
 interface InteractiveCellProps {
@@ -31,7 +31,7 @@ export default function ContactRow(props: InteractiveCellProps) {
           e.target.innerText = props.data || '';
           return e.preventDefault();
         } else if (props.fieldName === 'lastContact') {
-          e.target.innerText = validateDate(e.target.innerText);
+          e.target.innerText = formatDate(e.target.innerText);
           e.preventDefault();
         }
         return updateContact(e);
