@@ -26,7 +26,7 @@ export default function ContactRow(props: ContactRowProps) {
           />
           );
       })}
-      <td onClick={() => props.removeContact(props.contactIndex)}>x</td>
+      <td  className="ContactRow_remove" onClick={() => props.removeContact(props.contactIndex)}>x</td>
     </tr>
   )
 }
