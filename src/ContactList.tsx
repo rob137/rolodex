@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import 'contactlist.scss';
+import './ContactList.scss';
 
 import ContactRow from './ContactRow';
 import { ContactData, Contact, ContactKey } from './types';
@@ -13,20 +13,20 @@ interface ContactListProps {
 
 export default function ContactList(props: ContactListProps) {
   return (
-    <table>
-      <thead>
-        <tr>
+    <table className="ContactList">
+      <thead className="ContactList_thead">
+        <tr className="ContactList_thead_tr">
           {props.fieldNames.map((fieldName, key) => {
             const header = (
               fieldName === 'lastContact'
                   ? 'Last Contacted'
                   : fieldName.charAt(0).toUpperCase() + fieldName.slice(1)
             );
-            return <th key={key}>{header}</th>
+            return <th className="ContactList_thead_tr_header" key={key}>{header}</th>
           })}
         </tr>
       </thead>
-      <tbody>
+      <tbody className="ContactList_tbody">
         {
           props.contactData.map((contact: Contact, key) => {
             return (
