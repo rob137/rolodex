@@ -1,5 +1,5 @@
 import React from 'react';
-import 'InteractiveCell.css';
+import './InteractiveCell.scss';
 
 import { formatDate } from './App';
 import { ContactKey } from './types';
