@@ -1,0 +1,18 @@
+.InteractiveCell {
+  word-wrap: break-word;
+}
+
+@media screen and (max-width: 600px) {
+  .InteractiveCell {
+    display: block;
+    width: 98vw;
+    text-align: right;
+
+    &::before {
+      // instead of using <th> - allows switching of table axis 
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+    }
+  }
+}
