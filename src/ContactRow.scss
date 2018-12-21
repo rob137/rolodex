@@ -2,5 +2,10 @@
   .ContactRow {
     display: block;
     margin-bottom: 1em;
+    background-color: #f0f7f7;
+    
+    &:nth-of-type(odd) { 
+      background: white; 
+    }
   }
 }
