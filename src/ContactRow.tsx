@@ -14,7 +14,7 @@ interface ContactRowProps {
 
 export default function ContactRow(props: ContactRowProps) {
   return (
-    <tr>
+    <tr className="ContactRow">
       {props.fieldNames.map((fieldName: ContactKey, key: number) => {
         return (
           <InteractiveCell
