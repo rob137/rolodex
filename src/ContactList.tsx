@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import 'contactlist.css';
+import 'contactlist.scss';
 
 import ContactRow from './ContactRow';
 import { ContactData, Contact, ContactKey } from './types';
