@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { validateDate } from './App';
 import { ContactKey } from './types';
 
 interface InteractiveCellProps {
@@ -25,9 +26,13 @@ export default function ContactRow(props: InteractiveCellProps) {
         }
       }}
       onBlur={(e) => {
+        // For date field: accept only dates, and format them before saving to DOM 
         if (props.fieldName === 'lastContact' && isNaN(Date.parse(e.target.innerText))) {
           e.target.innerText = props.data || '';
           return e.preventDefault();
+        } else if (props.fieldName === 'lastContact') {
+          e.target.innerText = validateDate(e.target.innerText);
+          e.preventDefault();
         }
         return updateContact(e);
       }}
