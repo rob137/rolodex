@@ -37,7 +37,7 @@ export default class ContactAdder extends Component<ContactAdderProps, ContactAd
 
   render() {
     return (
-      <form onSubmit={(e) => {
+      <form className="ContactAdder" onSubmit={(e) => {
         e.preventDefault();
         this.props.setNewContact(this.state);
         return false;
