@@ -1,4 +1,5 @@
 import React from 'react';
+import 'InteractiveCell.css';
 
 import { formatDate } from './App';
 import { ContactKey } from './types';
