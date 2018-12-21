@@ -23,6 +23,7 @@ export default function ContactRow(props: InteractiveCellProps) {
 
   return (
     <td
+      className="InteractiveCell"
       contentEditable={true}
       suppressContentEditableWarning={true}
       data-label={header}
