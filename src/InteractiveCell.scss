@@ -5,8 +5,9 @@
 @media screen and (max-width: 600px) {
   .InteractiveCell {
     display: block;
-    width: 98vw;
+    width: 90vw;
     text-align: right;
+    border-bottom: 1px grey solid;
 
     &::before {
       // instead of using <th> - allows switching of table axis 

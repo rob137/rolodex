@@ -1,6 +1,6 @@
 .ContactList {
   table-layout: fixed;
-  width: 98vw;
+  width: 95%;
   max-width: 1300px;
 
   &_thead {
@@ -15,7 +15,7 @@
 @media screen and (max-width: 600px) {
   .ContactList {
     display: table;
-    width: 100%;
+    width: 95%;
     max-width: none;
   
     // Hide - use data-label instead on small screens.  See InteractiveCell.scss
