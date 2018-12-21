@@ -15,6 +15,7 @@ export const formatDate = (input?: string) => {
   if (!input || isNaN(Date.parse(input))) {
     return '';
   }
+  // To do: default to current year (currently '10 jan' will return 10 Jan 2001)
   return new Date(input).toDateString();
 }
 
