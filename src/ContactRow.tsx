@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './ContactRow.scss.';
+import './ContactRow.scss';
 
 import InteractiveCell from './InteractiveCell';
 import { Contact, ContactKey } from './types';
