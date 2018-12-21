@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './ContactAdder.scss';
 
 import ContactAdderInput from './ContactAdderInput';
 import { NewContact, ContactKey } from './types';
