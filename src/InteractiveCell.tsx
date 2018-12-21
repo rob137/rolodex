@@ -16,10 +16,15 @@ export default function ContactRow(props: InteractiveCellProps) {
     event.target && props.updateContact(props.contactIndex, props.fieldName, props.data || '');
   }
 
+  const header = props.fieldName === 'lastContact'
+      ? 'Last Contacted'
+      : props.fieldName.charAt(0).toUpperCase() + props.fieldName.slice(1)
+
   return (
     <td
       contentEditable={true}
       suppressContentEditableWarning={true}
+      data-label={header}
       onKeyDown={(e) => {
         if (e.which === 13 && e.shiftKey === false) {
           (e.target as HTMLElement).blur()
