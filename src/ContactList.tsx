@@ -13,7 +13,7 @@ interface ContactListProps {
 export default function ContactList(props: ContactListProps) {
   return (
     <table>
-      <tbody>
+      <thead>
         <tr>
           {props.fieldNames.map((fieldName, key) => {
             const header = (
@@ -24,6 +24,8 @@ export default function ContactList(props: ContactListProps) {
             return <th key={key}>{header}</th>
           })}
         </tr>
+      </thead>
+      <tbody>
         {
           props.contactData.map((contact: Contact, key) => {
             return (
